@@ -1,0 +1,68 @@
+** Assignment 3
+#+TITLE: Math 115 A1
+#+LaTeX_CLASS: article
+#+LaTeX_CLASS_OPTIONS: [article,letterpaper,times,10pt,margin=0.5in]
+#+LATEX_HEADER: \usepackage[margin=0.3in]{geometry}
+1. $\alpha = \arctan\frac{4}{5}$. So $\tan\alpha=\frac{4}{5}$, $\cot\alpha=\frac{5}{4}$,
+   and $\alpha\in(-\pi/2,\pi/2)$. Since $\tan\alpha>0$, $\alpha\in(0,\pi/2)$,
+   and $\cos\alpha>0, \sin\alpha > 0$
+   1. $\cos^2\alpha=\frac{1}{1+\tan^2\alpha}=\frac{25}{41}$, so $\cos\alpha=+\frac{5}{\sqrt{41}}$;
+      $\sin^2\alpha=1-\frac{25}{41}=\frac{16}{41}$, so $\sin\alpha=+\frac{4}{\sqrt{41}}$.
+      $\sec\alpha=\frac{\sqrt{41}}{4}, \csc\alpha=\frac{\sqrt{41}}{5}$
+   2. $\sin2\alpha=2\sin\alpha\cos\alpha=\frac{40}{41}$. $\cos2\alpha=2\cos^2\alpha-1=\frac{9}{41}$
+2.
+   1. $\cot(\arcsin(-\frac{1}{2})-arcsec(2))=\cot(-\frac{\pi}{6}-\frac{\pi}{3})=\cot(-\frac{\pi}{2})=0$
+   2. Let $x=\arctan2, y=\arctan3$. Then $x,y\in(0,\pi/2)$, $\sin^2 x=\frac{1}{1+2^{-2}}=\frac{4}{5}$,
+      $\cos^2 x=\frac{1}{5}$, $\sin^2 y=\frac{9}{10}, \cos^2 y=\frac{1}{10}$.\\
+      Hence $\cos(x+y)=
+      \cos(x)\cos(y)-\sin(x)\sin(y)=\frac{1}{\sqrt{5\times10}}-\frac{2\times3}{\sqrt{5\times10}}
+      = - \frac{1}{\sqrt2}$. Note $\tan x, \tan y > 1$, so $x+y\in(\pi/2,\pi)$, and $\cos(x+y)<0$
+3. If $y=\tanh x=\frac{e^x-e^{-x}}{e^x+e^{-x}}=\frac{(e^{2x}+1)e^{-x}}{(e^{2x}-1)e^{-x}}$,
+   then $e^{2x}-1=y(e^{2x}+1)$, $e^{2x}=\frac{1+y}{1-y}$,
+   and $x=\frac{1}{2}\ln\left(\frac{1+y}{1-y}\right)$ as claimed.
+4.
+   1. $\int_{-1}^2 \frac{\ln(x+2)}{x+2}\,dx=\int_{-1}^2\ln(x+2)\ln'(x+2)\,dx
+       =\frac{1}{2}\ln^2(x+2)|_{-1}^2 = \frac{\ln^2 4}{2} = 2\ln^2 2$
+   2. $\int_0^{\ln2} \frac{\frac{1}{2}(e^{2x}+3)'}{e^{2x}+3}\,dx
+       =\frac{1}{2}\ln(e^{2x}+3)|_0^{\ln2} = \ln\frac{\sqrt7}{2}$
+5.
+   1. If $x,y\in(1,+\infty)$ are two points such that $f(x)=\frac{1}{x-1}=f(y)=\frac{1}{y-1}$, then
+      $x-1=y-1$ and consequently $x=y$.
+   2. $f(x)=2$ at $x=\frac{3}{2}$, $f'|_{3/2} = -\frac{1}{(x-1)^2}|_{3/2}=-4$.
+      Thus $(f^{-1})'|_{f(x)=2} = \frac{1}{f'|_{x=f^{-1}(2)}}=-\frac{1}{4}$
+6. $f(3)=2$ means $g(2)=3$, and from $f'|_3=1/9$ follows that $g'|_2=9$.
+   Now $G'|_2=-\frac{g'}{g^2}|_2=-\frac{9}{3^2}=-1$
+7.
+   1. $\int_0^{\sqrt{3}/2} \frac{dx}{4x^2+9} = \frac{1}{9}\int_0^{\sqrt{3}/2} \frac{dx}{1+(\frac{2x}{3})^2}
+      = \frac{1}{9}\frac{3}{2}\int_{u=0}^{1/\sqrt3} \frac{du}{1+u^2}
+      = \frac{1}{6}\arctan u|_0^{1/\sqrt3}=\frac{\pi}{36}$
+   2. $\int\frac{1+x}{\sqrt{3-x^2}}\,dx
+      = \frac{1}{\sqrt3}\int\frac{dx}{\sqrt{1-(x/\sqrt3)^2}}
+        {} + \int\frac{-(3-x^2)'}{2}(3-x^2)^{-1/2}\,dx
+      =\arcsin(\frac{x}{\sqrt3})-\sqrt{3-x^2}+C$
+8.
+   1. $f'|_{\ln3} = [(\sinh x)^{e^x}]'|_{\ln3} =  [e^{\ln(\sinh x)e^x}]'|_{\ln3}
+       = (e^x\ln(\sinh x) + e^x\frac{\cosh x}{\sinh x})\sinh^{e^x}x|_{\ln3}
+       = e^x(\sinh^{e^x}x)(\ln(\sinh x) + \coth x)|_{\ln3}$
+       Now $e^{\ln 3}=3, \sinh(\ln3)=\frac{3-3^{-1}}{2}=\frac{4}{3},
+         \cosh(\ln3)=\frac{5}{3},\coth(\ln3)=\frac{5}{4}$, so
+       $f'|_{\ln3} = (\frac{4}{3})^2(4\ln(\frac{4}{3})+5)$
+   2. $[x^3\cosh(\ln x)]' = 3x^2\cosh(\ln x) + \frac{x^3\sinh\ln x}{x}
+       = x^2 (3\cosh(\ln x) + \sinh(\ln x))
+       = x^2\left(3\frac{x+x^{-1}}{2}+\frac{x-x^{-1}}{2}\right)
+       = x(2x^2+1)$
+   3. $f'=[\sqrt{1-\ln^2 x}\arcsin(\ln x)]'
+         = - \frac{1}{2}\frac{2\ln x}{x\sqrt{1-\ln^2 x}}\arcsin(\ln x)
+          {} + \frac{\sqrt{1-\ln^2x}}{x\cos(\arcsin(\ln x))}
+       = - \frac{\ln x\,\arcsin(\ln x)}{x\sqrt{1-\ln^2 x}}
+          {} + \frac{\sqrt{1-\ln^2 x}}{x\sqrt{1-\ln^2x}}$ \\
+      Finally, $f'= \frac{1}{x} \left(
+          1 - \frac{\ln x\,\arcsin(\ln x)}{\sqrt{1-\ln^2 x}} \right)$
+9.
+   1. $\cosh x\cosh y+\sinh x \sinh y = \frac{(e^x+e^{-x})(e^y+e^{-y})}{4}
+        {} + \frac{(e^x-e^{-x})(e^y-e^{-y})}{4}
+        = \frac{2(e^{x+y}+e^{-x-y}) + e^{x-y} +e^{y-x} - e^{x-y}-e^{y-x}}{4}
+        = \cosh(x+y)$
+   2. $\frac{1+\tanh x}{1-\tanh x} = \frac{\cosh x + \sinh x}{\cosh x - \sinh x}
+        = \frac{2e^x}{2e^{-x}}=e^{2x}$
+
