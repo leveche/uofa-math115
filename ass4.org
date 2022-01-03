@@ -1,0 +1,47 @@
+** Assignment 4
+#+TITLE: Math 115 A1
+#+LaTeX_CLASS: article
+#+LaTeX_CLASS_OPTIONS: [article,letterpaper,times,10pt,margin=0.5in]
+#+LATEX_HEADER: \usepackage[margin=0.3in]{geometry}
+
+L'Hôpital's Rule is used (repeatedly, if appropriate) in questions
+1--7. Integration by parts is used in questions 8--11.
+
+1. $\lim_{x\to0}\frac{x}{\arctan(4x)}=\lim_{x\to0}\frac{x'}{\arctan'(4x)}
+    = \lim_{x\to0}\frac{1+x^2}{4}=\frac{1}{4}$
+2. $\lim_{x\to0}\frac{\cosh mx - \cosh nx}{x^2} = \lim_{x\to0}\frac{m\sinh mx - n\sinh nx}{2x}
+    = \lim_{x\to0}\frac{m^2\cosh mx -n^2\cosh nx}{2} = \frac{m^2-n^2}{2}$
+3. $\lim_{x\to0^+}\sin x \ln x = \lim_{x\to0^+} \frac{\ln x}{1/\sin x}
+    = - \lim_{x\to0^+}\frac{1/x}{\cos x/\sin^2 x} = -\lim_{x\to0^+}\frac{\sin^2x}{x\cos x}
+    = -\lim_{x\to0^+}\frac{2\sin x \cos x}{\cos x - x\sin x} = 0$
+4. $\lim_{x\to0}(\csc x - \cot x) = \lim_{x\to0}\frac{1-\cos x}{\sin x}
+    = \lim_{x\to0}\frac{\sin x}{\cos x} = 0$
+5. $\lim_{x\to0^+}x\ln(\tan2x)=\lim_{x\to0^+}x\ln\sin(2x)-x\ln\cos(2x)=\lim_{x\to0^+}\frac{\ln(\sin(2x))}{1/x} \\
+    = - \lim_{x\to0^+}\frac{2\cos(2x)/\sin(2x)}{1/x^2}
+    = 2 \lim_{x\to0^+}\frac{2x\cos(2x)-2x^2\sin(2x)}{2\cos2x}=0$.
+    Hence $\lim_{x\to0^+}(\tan2x)^x=1$
+6. $\lim_{x\to\infty} (2x+1)(\ln(2x-3)-\ln(2x+5)) = \lim_{u:=\frac{1}{2x+5}\to0^+}(u^{-1}-4)(\ln(u^{-1}-8)+\ln u)
+    = \lim_{u\to0^+}\frac{(1-4u)\ln(1-8u)}{u} \\
+    = -4 \lim_{u\to0^+}\left(\ln(1-8u) + 2\frac{1-4u}{1-8u}\right) = -8$.
+   Thus $\lim_{x\to\infty}\left(\frac{2x-3}{2x+5}\right)^{2x+1}=e^{-8}$
+7. $\lim_{x\to1^+}\left(\frac{x}{x-1}-\frac{1}{\ln x}\right)
+   = \lim_{u:=x-1\to0^+} \left(1+\frac{\ln(u+1)-u}{u\ln(u+1)}\right)
+   = 1-\lim_{u\to0^+}\frac{u}{u+(u+1)\ln(u+1)} = 1-\lim_{u\to0^+}\frac{1}{1+\frac{u+1}{u+1}+\ln(u+1)}
+   = \frac{1}{2}$
+8. $I=\int e^{-\theta}\cos2\theta\,d\theta
+     = -\cos2\theta\,e^{-\theta}-\int(-2\sin2\theta)(-e^{-\theta})\,d\theta
+     = e^{\theta}\cos2\theta-2(e^{-\theta}\sin2\theta + \int 2\cos2\theta\,e^{-\theta}\,d\theta)$ \\
+   In other words, $5I = -e^{-\theta}(\cos2\theta - 2\sin2\theta )$,
+   and $I=\frac{2\sin2\theta - \cos2\theta}{5}e^{-\theta}$.
+9. $\int_1^{\sqrt3}\arctan x\,dx = \int_1^{\sqrt3} 1.\arctan x\,dx
+     = \left[ x\arctan x - \int\frac{x}{1+x^2}\,dx\right]_1^{\sqrt3}
+     = (\sqrt3\frac{\pi}{3})-\frac{\pi}{4}-\left[\frac{1}{2}\ln(1+x^2)\right]_1^{\sqrt3}
+     = \frac{\pi}{12}(4\sqrt3-3)-\ln\sqrt2$
+10. $\int_1^e 1.\ln^2x\,dx = \left[ x\ln^2x - \int\frac{2\ln x}{x}x\,dx \right]_1^e
+     = \left[ x\ln^2x - 2(x\ln x - \int \frac{x}{x}\,dx) \right]_1^e
+     = \left[ x\ln^2x - 2x\ln x + 2x \right]_1^e = e-2$
+11.
+    1. $\frac{V}{2\pi} = \int_{x=0}^1 x(e^x-e^{-x})\,dx = \int_0^1 2x\sinh x\,dx
+         = 2\left[ x\cosh x - \int\cosh x\,dx \right]_0^1 = 2\left[ x\cosh x -\sinh x\right]_0^1 = \frac{2}{e}$
+    2. $\frac{V}{\pi} = \int_{x=0}^1 e^{2x}-e^{-2x}\,dx = 2\int_0^1 \sinh 2x\,dx
+         = \left[\cosh 2x\right]_0^1 = \cosh2-1$
